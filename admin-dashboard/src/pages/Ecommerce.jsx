@@ -17,9 +17,9 @@ const DropDown = ({ currentMode }) => (
 
  
 // class Ecommerce extends React.PureComponent {
- 
+ //error with react objects
 //  render(){
-const Ecommerce = ({}) => {
+const Ecommerce = () => {
    const { currentColor, currentMode } = useStateContext();
   return (
     <div className='mt-24'>
@@ -326,10 +326,9 @@ const Ecommerce = ({}) => {
             />
             <div className="mt-8">
               <p className="font-semibold text-lg">React 18 coming soon!</p>
-              <p className="text-gray-400 ">By Johnathan Doe</p>
+              <p className="text-gray-400 ">By Arctic Monkey at 2</p>
               <p className="mt-8 text-sm text-gray-400">
-                This will be the small description for the news you have shown
-                here. There could be some great info.
+                This will be crumble completely. There could be some great info.
               </p>
               <div className="mt-3">
                 <Button

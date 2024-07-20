@@ -4,7 +4,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
 import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { Tooltip, TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
@@ -49,30 +49,32 @@ const Navbar = () => {
     }
   },[screenSize]);
 
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
+
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>
 
-     <NavButton title="Menu" customFunc={()=>setActiveMenu((prevActiveMenu)=>!prevActiveMenu) } color="blue" icon={<AiOutlineMenu/>} />
+     <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu/>} />
 
      <div className='flex'>
         <NavButton 
           title="Cart" 
           customFunc={()=>handleClick("cart")} 
-          color="blue" 
+          color={currentColor} 
           icon={<FiShoppingCart/>} 
         />
         <NavButton 
           title="Chat" 
           dotColor="#03C9D7"
           customFunc={()=>handleClick("chat")} 
-          color="blue" 
+          color={currentColor}
           icon={<BsChatLeft/>} 
         />
         <NavButton 
           title="Notifications" 
           dotColor="#03C9D7"
           customFunc={()=>handleClick("notification")} 
-          color="blue" 
+          color={currentColor} 
           icon={<RiNotification3Line/>} 
         />
         <TooltipComponent 
@@ -103,7 +105,7 @@ const Navbar = () => {
         {isClicked.userProfile&&<UserProfile/>}
      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
