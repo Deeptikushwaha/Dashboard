@@ -1,5 +1,5 @@
 import React,{createContext, useContext, useState} from "react";
-import { UserProfile } from "../components";
+//import { UserProfile } from "../components";
 
 const StateContext = createContext();
 
@@ -28,7 +28,7 @@ export const ContextProvider =({children}) =>{
   };
 
   const setColor = (color) => {
-    setCurrentColor(color);
+    setCurrentColor(color); 
     localStorage.setItem('colorMode', color);
   };
 
